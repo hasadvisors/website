@@ -1,5 +1,22 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html"
+  },
+  "routes": [
+    {
+      "route": "/",
+      "rewrite": "/index_movil.html",
+      "headers": {
+        "Vary": "User-Agent"
+      }
+    }
+  ],
+  "globalHeaders": {
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".svg": "image/svg+xml"
   }
 }
