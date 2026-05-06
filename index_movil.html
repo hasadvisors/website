@@ -1,4 +1,777 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HAS Advisors – Strategic Financial Leadership</title>
+<meta name="description" content="Virtual CFO & Strategic Advisory for scaling Canadian businesses. Fractional CFO, Tax Compliance, E-commerce, ESG, SR&ED." />
+<meta property="og:title" content="HAS Advisors – Strategic Financial Leadership" />
+<meta property="og:description" content="Empowering Canadian businesses with the financial leadership they need to scale." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="./img/Website_Azul.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #fff; color: #1e293b; -webkit-font-smoothing: antialiased; }
+
+```
+.hero-bg {
+background: radial-gradient(ellipse 78% 68% at 50% 44%, #1b3a5c 0%, #0b1726 55%, #050d18 100%);
+position: relative; overflow: hidden;
+}
+.hero-bg::before {
+content: ''; position: absolute; inset: 0;
+background: repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(192,200,208,0.03) 80px),
+repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(192,200,208,0.03) 80px);
+pointer-events: none;
+}
+.hero-bg::after {
+content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 80px;
+background: linear-gradient(to bottom, transparent, #ffffff);
+pointer-events: none;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(22px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.anim-1 { animation: fadeUp 0.8s ease both; }
+.anim-2 { animation: fadeUp 0.8s 0.1s ease both; }
+.anim-3 { animation: fadeUp 0.8s 0.22s ease both; }
+.anim-4 { animation: fadeUp 0.8s 0.34s ease both; }
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+.silver-text {
+background: linear-gradient(135deg, #e8ecf0 0%, #c0c8d0 38%, #8a9099 68%, #c8d0d8 100%);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.service-card {
+border: 1px solid #e2e8f0;
+transition: border-color 0.28s, box-shadow 0.28s, transform 0.28s;
+}
+.service-card:hover {
+border-color: #94a3b8;
+box-shadow: 0 10px 44px rgba(0,26,51,0.10);
+transform: translateY(-4px);
+}
+.service-icon {
+width: 52px; height: 52px;
+display: flex; align-items: center; justify-content: center;
+border-radius: 12px;
+background: linear-gradient(140deg, #001a33, #002b52);
+flex-shrink: 0;
+}
+
+.tier-card {
+border: 1px solid #e0e5ea;
+transition: transform 0.28s, box-shadow 0.28s;
+background: #ffffff;
+}
+.tier-card:hover { transform: translateY(-5px); box-shadow: 0 16px 52px rgba(0,26,51,0.14); }
+
+.btn-silver {
+background: linear-gradient(135deg, #bec6ce 0%, #e8ecf0 48%, #bec6ce 100%);
+color: #001a33; font-family: 'Inter', sans-serif; font-weight: 700;
+font-size: 0.78rem; letter-spacing: 0.06em;
+transition: opacity 0.22s, transform 0.22s; cursor: pointer;
+}
+.btn-silver:hover { opacity: 0.85; transform: scale(1.015); }
+
+.btn-outline-hero {
+border: 1px solid rgba(192,200,208,0.55); color: #c0c8d0;
+font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 400;
+transition: background 0.22s, color 0.22s;
+}
+.btn-outline-hero:hover { background: rgba(192,200,208,0.1); color: #fff; }
+
+.btn-outline-dark {
+border: 1.5px solid #001a33; color: #001a33;
+font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
+transition: background 0.22s, color 0.22s;
+}
+.btn-outline-dark:hover { background: #001a33; color: #fff; }
+
+.stat-number { font-family: 'Playfair Display', Georgia, serif; font-size: 2.8rem; font-weight: 700; line-height: 1; }
+
+footer { font-family: 'Inter', sans-serif; }
+footer a { color: #7a8898; transition: color 0.2s; }
+footer a:hover { color: #dde3ea; }
+.footer-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: #c0c8d0; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #050d18; }
+::-webkit-scrollbar-thumb { background: #002040; border-radius: 3px; }
+
+/* ══════════════════════════
+MOBILE RESPONSIVE
+══════════════════════════ */
+@media (max-width: 768px) {
+
+/* NAVBAR */
+header > div { height: 72px !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+header img { height: 72px !important; }
+header nav { display: none !important; }
+header > div > a.btn-silver { display: none !important; }
+#menu-btn { display: flex !important; }
+
+/* MOBILE MENU */
+#mobile-menu {
+position: fixed; top: 72px; left: 0; right: 0; z-index: 49;
+background: #ffffff; border-bottom: 1px solid #e2e8f0;
+flex-direction: column; padding: 1.25rem 1.5rem; gap: 1rem;
+box-shadow: 0 8px 24px rgba(0,26,51,0.10);
+}
+#mobile-menu a {
+font-family: 'Inter', sans-serif; font-size: 0.85rem;
+letter-spacing: 0.12em; text-transform: uppercase;
+font-weight: 600; color: #001a33; text-decoration: none;
+padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9;
+}
+#mobile-menu .btn-silver {
+display: block !important; text-align: center;
+padding: 0.75rem 1rem; border-radius: 4px; margin-top: 0.5rem;
+border-bottom: none !important;
+}
+
+/* HERO */
+section.hero-bg { padding-top: 72px !important; min-height: 100svh !important; }
+section.hero-bg > div { padding-top: 2rem !important; padding-bottom: 2.5rem !important; padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+section.hero-bg > div > div { max-width: 100% !important; }
+
+/* HERO STATS */
+div[style*="grid-template-columns:repeat(3,1fr)"][style*="border-top"] {
+grid-template-columns: repeat(3, 1fr) !important;
+gap: 1rem !important;
+}
+.stat-number { font-size: 2rem !important; }
+
+/* TRUST BAR */
+#trust-bar div[style*="display:flex"][style*="flex-wrap:wrap"] {
+gap: 1.5rem !important;
+}
+#trust-bar div[style*="width:1px"] { display: none !important; }
+
+/* SERVICES */
+#services { padding: 3rem 0 !important; }
+#services > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+div[style*="grid-template-columns:repeat(3,1fr)"][style*="gap:1.25rem"] {
+grid-template-columns: 1fr !important;
+}
+div[style*="grid-template-columns:repeat(2,minmax(0,1fr))"] {
+grid-template-columns: 1fr !important;
+max-width: 100% !important;
+}
+
+/* TIERS */
+#tiers { padding: 3rem 0 !important; }
+#tiers > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+#tiers > div > div[style*="grid-template-columns:repeat(3,1fr)"] {
+grid-template-columns: 1fr !important;
+}
+#tiers div[style*="padding-top:1.8rem"] { padding-top: 2.5rem !important; }
+
+/* BILINGUAL */
+#bilingual { padding: 3rem 0 !important; }
+#bilingual > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+#bilingual div[style*="grid-template-columns:1fr 1fr"] {
+grid-template-columns: 1fr !important;
+}
+#bilingual div[style*="border-right"] {
+border-right: none !important;
+border-bottom: 1px solid rgba(192,200,208,0.12) !important;
+padding: 2rem 1.5rem !important;
+}
+#bilingual div[style*="padding:3rem 3.5rem"]:last-child {
+padding: 2rem 1.5rem !important;
+}
+
+/* CONTACT */
+#contact { padding: 3rem 0 !important; }
+#contact > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+#contact div[style*="max-width:480px"] { max-width: 100% !important; }
+#contact div[style*="grid-template-columns:1fr 1fr"] {
+grid-template-columns: 1fr !important;
+}
+
+/* FOOTER */
+footer > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+footer div[style*="grid-template-columns:2fr 1fr 1fr"] {
+grid-template-columns: 1fr !important;
+gap: 2rem !important;
+}
+footer div[style*="justify-content:space-between"] {
+flex-direction: column !important;
+align-items: flex-start !important;
+gap: 0.5rem !important;
+}
+}
+
+@media (max-width: 480px) {
+h1 { font-size: clamp(2.2rem, 8vw, 3rem) !important; }
+}
+```
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════
+NAVBAR — White permanent
+══════════════════════════ -->
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50" style="background:#ffffff; border-bottom:1px solid #e2e8f0; box-shadow:0 1px 8px rgba(0,26,51,0.06);">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between" style="height:120px;">
+
+```
+<a href="#" aria-label="HAS Advisors" class="flex items-center flex-shrink-0">
+<img src="Website_Azul.png" alt="HAS Advisors"
+style="height:120px; width:auto; object-fit:contain; display:block; border:none; box-shadow:none; background:#ffffff; padding:6px 14px; border-radius:6px;"
+onerror="this.style.display='none';document.getElementById('nav-fallback').style.display='flex';" />
+<div id="nav-fallback" style="display:none; align-items:center; gap:8px;">
+<span style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900; color:#001a33;">HAS</span>
+<span style="font-family:'Inter',sans-serif; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; font-weight:600;">Advisors</span>
+</div>
+</a>
+
+<nav style="display:flex; align-items:center; gap:1.75rem;">
+<a href="#services" style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#001a33; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">Services</a>
+<a href="#tiers" style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#001a33; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">Plans</a>
+<a href="#bilingual" style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#001a33; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">Bilingual</a>
+<a href="#contact" style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#001a33; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">Contact</a>
+</nav>
+
+<a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" rel="noopener" class="btn-silver px-5 py-2 rounded-sm" style="white-space:nowrap; text-decoration:none;">
+Book a Discovery Call
+</a>
+
+<button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Open menu" style="color:#001a33; display:none;">
+<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+</svg>
+</button>
+```
+
+</div>
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobile-menu" style="display:none; position:fixed; top:72px; left:0; right:0; z-index:49; background:#ffffff; border-bottom:1px solid #e2e8f0; flex-direction:column; padding:1.25rem 1.5rem; gap:1rem; box-shadow:0 8px 24px rgba(0,26,51,0.10);">
+<a href="#services">Services</a>
+<a href="#tiers">Plans</a>
+<a href="#bilingual">Bilingual</a>
+<a href="#contact">Contact</a>
+<a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" rel="noopener" class="btn-silver">Book a Discovery Call</a>
+</div>
+
+<!-- ══════════════════════════
+HERO
+══════════════════════════ -->
+
+<section class="hero-bg flex items-center" style="min-height:100vh; padding-top:120px; background-color:#050d18;">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 w-full" style="padding-top:2.5rem; padding-bottom:3rem;">
+<div style="max-width:680px;">
+
+```
+<p class="anim-1" style="font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.28em; text-transform:uppercase; color:#94a3b8; margin-bottom:1.1rem;">
+Virtual CFO &amp; Strategic Advisory &nbsp;·&nbsp; Canada
+</p>
+
+<h1 class="anim-2" style="font-family:'Playfair Display',Georgia,serif; font-weight:900; line-height:1.08; margin-bottom:1.1rem; font-size:clamp(2.8rem,6.5vw,5rem);">
+<span class="silver-text">Strategic</span><br/>
+<span style="color:#ffffff;">Financial<br/>Leadership.</span>
+</h1>
+
+<p class="anim-3" style="font-family:'Inter',sans-serif; font-weight:300; font-size:1.05rem; line-height:1.75; color:#cbd5e1; max-width:520px; margin-bottom:2rem;">
+Most founders hit a ceiling where bookkeeping is no longer enough. You need a
+<em style="color:#e2e8f0; font-style:normal; font-weight:600;">Strategic Financial Partner</em>
+to navigate the Canadian landscape with data-driven confidence.
+</p>
+
+<div class="anim-4" style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+<a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" rel="noopener" class="btn-silver rounded-sm" style="padding:0.65rem 1.5rem; text-decoration:none;">Book a Discovery Call</a>
+<a href="#services" class="btn-outline-hero rounded-sm" style="padding:0.65rem 1.5rem; text-decoration:none;">Explore Services</a>
+</div>
+
+<div style="margin-top:2.5rem; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; border-top:1px solid rgba(192,200,208,0.1); padding-top:2rem;">
+<div>
+<p class="stat-number silver-text">5</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#94a3b8; margin-top:0.3rem;">Core Pillars</p>
+</div>
+<div>
+<p class="stat-number silver-text">2</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#94a3b8; margin-top:0.3rem;">Languages</p>
+</div>
+<div>
+<p class="stat-number silver-text">3+</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#94a3b8; margin-top:0.3rem;">Markets Served</p>
+</div>
+</div>
+
+</div>
+```
+
+</div>
+</section>
+
+<!-- ══════════════════════════
+TRUST BAR — Certifications
+══════════════════════════ -->
+
+<section id="trust-bar" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding:1.75rem 0;">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.62rem; letter-spacing:0.28em; text-transform:uppercase; color:#94a3b8; font-weight:600;">Certified &amp; Recognized By</p>
+<div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:2.5rem;">
+<img src="Xero.png" alt="Xero L2 Certified Professional"
+style="height:55px; width:auto; object-fit:contain; display:block; filter:grayscale(15%); transition:filter 0.25s, transform 0.25s;"
+onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.05)';"
+onmouseout="this.style.filter='grayscale(15%)';this.style.transform='scale(1)';" />
+<div style="width:1px; height:36px; background:#e2e8f0;"></div>
+<img src="A2X_badge-certified.png" alt="A2X Certified Partner"
+style="height:55px; width:auto; object-fit:contain; display:block; filter:grayscale(15%); transition:filter 0.25s, transform 0.25s;"
+onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.05)';"
+onmouseout="this.style.filter='grayscale(15%)';this.style.transform='scale(1)';" />
+<div style="width:1px; height:36px; background:#e2e8f0;"></div>
+<img src="GHPC.PNG" alt="GHG Protocol Certified"
+style="height:52px; width:auto; object-fit:contain; display:block; filter:grayscale(15%); transition:filter 0.25s, transform 0.25s;"
+onmouseover="this.style.filter='grayscale(0%)';this.style.transform='scale(1.05)';"
+onmouseout="this.style.filter='grayscale(15%)';this.style.transform='scale(1)';" />
+</div>
+</div>
+</div>
+</section>
+
+<!-- ══════════════════════════
+SERVICES — White
+══════════════════════════ -->
+
+<section id="services" style="background:#ffffff; padding:5rem 0;">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+```
+<div class="reveal" style="margin-bottom:3.5rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.28em; text-transform:uppercase; color:#475569; margin-bottom:0.75rem; font-weight:600;">What We Do</p>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(2rem,4vw,2.8rem); color:#001a33; line-height:1.15;">
+The 5 Pillars of <span style="color:#001a33; font-weight:900; -webkit-text-fill-color:#001a33; text-shadow: 0 1px 2px rgba(0,0,0,0.08);">HAS Advisors</span>
+</h2>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:1.25rem;">
+
+<!-- 1. Fractional CFO -->
+<div class="reveal service-card rounded-xl bg-white" style="padding:2rem;">
+<div class="service-icon" style="margin-bottom:1.25rem;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c8d0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 2L3 6.5v5.5c0 5.25 3.8 10.15 9 11.5 5.2-1.35 9-6.25 9-11.5V6.5L12 2z"/>
+<rect x="7.5" y="14" width="2" height="3" rx="0.4" fill="#c0c8d0" stroke="none"/>
+<rect x="11" y="11" width="2" height="6" rx="0.4" fill="#c0c8d0" stroke="none"/>
+<rect x="14.5" y="9" width="2" height="8" rx="0.4" fill="#c0c8d0" stroke="none"/>
+</svg>
+</div>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; color:#001a33; margin-bottom:0.55rem;">Fractional CFO &amp; Strategic Advisory</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.83rem; line-height:1.7; color:#1e293b; margin-bottom:0.9rem;">Precision FP&amp;A, cash flow forecasting, capital structure optimization, and board-level reporting — high-level financial oversight without the full-time CFO cost.</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.67rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; color:#475569;">Target: $1M+ Revenue Companies</p>
+</div>
+
+<!-- 2. E-commerce -->
+<div class="reveal service-card rounded-xl bg-white" style="padding:2rem;">
+<div class="service-icon" style="margin-bottom:1.25rem;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c8d0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="3.5" r="1.8"/><circle cx="3.5" cy="19" r="1.8"/><circle cx="20.5" cy="19" r="1.8"/><circle cx="12" cy="13" r="1.8"/>
+<line x1="12" y1="5.3" x2="12" y2="11.2"/>
+<line x1="4.9" y1="17.7" x2="10.7" y2="14.3"/>
+<line x1="19.1" y1="17.7" x2="13.3" y2="14.3"/>
+<line x1="5.3" y1="19" x2="18.7" y2="19"/>
+</svg>
+</div>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; color:#001a33; margin-bottom:0.55rem;">E-commerce &amp; Cloud Integration</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.83rem; line-height:1.7; color:#1e293b; margin-bottom:0.9rem;">Turning transactional chaos into clear insights. Automated multi-currency reconciliation and inventory valuation via Xero, A2X, Shopify, and Amazon.</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.67rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; color:#475569;">Xero · A2X · Shopify · Amazon</p>
+</div>
+
+<!-- 3. Tax & Compliance -->
+<div class="reveal service-card rounded-xl bg-white" style="padding:2rem;">
+<div class="service-icon" style="margin-bottom:1.25rem;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c8d0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9.5"/>
+<circle cx="12" cy="12" r="6.5" stroke-dasharray="2 2" stroke-width="1"/>
+<polyline points="8.5 12 11 14.5 15.5 9.5" stroke-width="1.6"/>
+</svg>
+</div>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; color:#001a33; margin-bottom:0.55rem;">Tax &amp; Corporate Compliance</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.83rem; line-height:1.7; color:#1e293b; margin-bottom:0.9rem;">Corporate tax filing (T2), GST/HST compliance, multi-provincial reporting, and CRA audit defense. Exclusive to Canadian-operating entities.</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.67rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; color:#475569;">T2 · GST/HST · CRA Defense</p>
+</div>
+
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; max-width:66.67%; margin:0 auto;">
+
+<!-- 4. ESG -->
+<div class="reveal service-card rounded-xl bg-white" style="padding:2rem;">
+<div class="service-icon" style="margin-bottom:1.25rem;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9.5" stroke="#c0c8d0" stroke-width="1.3" stroke-dasharray="3 2"/>
+<line x1="12" y1="19" x2="12" y2="13" stroke="#7fffd4" stroke-width="1.4"/>
+<path d="M9 16c0-2 1.5-4 3-5 1.5 1 3 3 3 5H9z" stroke="#7fffd4" stroke-width="1.3" fill="none"/>
+<path d="M10.5 13c0-1.5 0.8-3 1.5-4 0.7 1 1.5 2.5 1.5 4" stroke="#7fffd4" stroke-width="1.1" fill="none"/>
+</svg>
+</div>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; color:#001a33; margin-bottom:0.55rem;">ESG &amp; Carbon Accounting</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.83rem; line-height:1.7; color:#1e293b; margin-bottom:0.9rem;">GHG Protocol measurement (Scope 1, 2 &amp; 3) reporting, preparing firms for the Green Economy and unlocking sustainability-linked financing.</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.67rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; color:#475569;">GHG Protocol · Scope 1, 2 &amp; 3</p>
+</div>
+
+<!-- 5. SR&ED -->
+<div class="reveal service-card rounded-xl bg-white" style="padding:2rem;">
+<div class="service-icon" style="margin-bottom:1.25rem;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c0c8d0" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6 21h12"/><path d="M12 21v-4"/>
+<path d="M9 17c0-2.5 3-5 3-5s3 2.5 3 5"/>
+<line x1="12" y1="12" x2="12" y2="7"/>
+<rect x="10" y="3" width="4" height="5" rx="1"/>
+<line x1="8" y1="5.5" x2="10" y2="5.5"/>
+<circle cx="17" cy="8" r="1.5" stroke-width="1.2"/>
+<circle cx="19.5" cy="12" r="1.2" stroke-width="1.2"/>
+<line x1="18.2" y1="8.8" x2="19" y2="11"/>
+</svg>
+</div>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.1rem; color:#001a33; margin-bottom:0.55rem;">Innovation Funding (SR&amp;ED)</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.83rem; line-height:1.7; color:#1e293b; margin-bottom:0.9rem;">Identifying eligible R&amp;D activities and maximizing Scientific Research &amp; Experimental Development tax credits to reinvest in your innovation pipeline.</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.67rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; color:#475569;">SR&amp;ED Credits · R&amp;D Incentives</p>
+</div>
+
+</div>
+```
+
+</div>
+</section>
+
+<!-- ══════════════════════════
+ENGAGEMENT MODELS
+══════════════════════════ -->
+
+<section id="tiers" style="background:linear-gradient(160deg,#001a33 0%,#001e3c 100%); padding:5rem 0;">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+```
+<div class="reveal" style="margin-bottom:3.5rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.28em; text-transform:uppercase; color:#94a3b8; margin-bottom:0.75rem; font-weight:600;">Engagement Models</p>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(2rem,4vw,2.8rem); color:#ffffff; line-height:1.15;">
+Choose Your <span class="silver-text">Partnership Level</span>
+</h2>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; align-items:start;">
+
+<!-- Level 1 -->
+<div class="reveal tier-card rounded-xl" style="padding:2rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:#475569; margin-bottom:0.35rem; font-weight:700;">Level 1</p>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.35rem; color:#001a33; margin-bottom:0.4rem;">Compliance Foundations</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.8rem; color:#475569; margin-bottom:1.6rem; font-weight:500;">For businesses needing reliable compliance and clean books.</p>
+<ul style="list-style:none; margin-bottom:1.75rem; display:flex; flex-direction:column; gap:0.65rem;">
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Full-cycle bookkeeping</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Corporate tax filing (T2)</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">GST/HST filing &amp; compliance</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Xero cloud accounting setup</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Quarterly financial reports</span></li>
+</ul>
+<a href="#contact" class="btn-outline-dark rounded-sm" style="display:block; text-align:center; padding:0.7rem 1.25rem; text-decoration:none;">Get Started</a>
+</div>
+
+<!-- Level 2 -->
+<div class="reveal tier-card rounded-xl" style="padding:2rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:#475569; margin-bottom:0.35rem; font-weight:700;">Level 2</p>
+<h3 style="font-family:'Playfair Display',serif; font-weight:700; font-size:1.35rem; color:#001a33; margin-bottom:0.4rem;">Growth Advisory</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.8rem; color:#475569; margin-bottom:1.6rem; font-weight:500;">For scaling companies needing strategic financial guidance.</p>
+<ul style="list-style:none; margin-bottom:1.75rem; display:flex; flex-direction:column; gap:0.65rem;">
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Everything in Level 1</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Monthly FP&amp;A &amp; cash flow forecasting</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">E-commerce integration (A2X + Xero)</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">SR&amp;ED eligibility assessment</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Multi-provincial tax strategy</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; font-weight:500;">Bilingual advisory (EN/ES)</span></li>
+</ul>
+<a href="#contact" class="btn-outline-dark rounded-sm" style="display:block; text-align:center; padding:0.7rem 1.25rem; text-decoration:none;">Get Started</a>
+</div>
+
+<!-- Level 3 — PREMIUM -->
+<div class="reveal" style="position:relative; padding-top:1.8rem;">
+<div style="position:absolute; top:0; left:50%; transform:translateX(-50%); z-index:10;">
+<div style="background:linear-gradient(90deg,#6b7280 0%,#e5e7eb 30%,#f9fafb 50%,#e5e7eb 70%,#6b7280 100%); color:#111827; font-family:'Inter',sans-serif; font-weight:800; font-size:0.64rem; letter-spacing:0.28em; text-transform:uppercase; padding:6px 28px; white-space:nowrap; border-radius:3px; box-shadow:0 3px 16px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.7);">
+✦ &nbsp;PREMIUM PARTNERSHIP&nbsp; ✦
+</div>
+</div>
+<div style="padding:5px; border-radius:16px; background:linear-gradient(135deg,#94a3b8 0%,#f8fafc 30%,#ffffff 50%,#cbd5e1 72%,#94a3b8 100%); box-shadow:0 0 40px rgba(255,255,255,0.30), 0 0 18px rgba(203,213,225,0.45), 0 30px 72px rgba(0,0,0,0.30), 0 12px 32px rgba(0,26,51,0.22);">
+<div style="background:#ffffff; border-radius:12px; padding:2rem; position:relative; overflow:hidden;">
+<p style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:#475569; margin-bottom:0.35rem; margin-top:0.5rem; font-weight:700;">Level 3</p>
+<h3 style="font-family:'Playfair Display',serif; font-weight:900; font-size:1.35rem; color:#001a33; margin-bottom:0.4rem;">Strategic CFO</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.8rem; color:#475569; margin-bottom:1.5rem; font-weight:500;">Full Fractional CFO engagement for high-growth enterprises.</p>
+<ul style="list-style:none; margin-bottom:1.5rem; display:flex; flex-direction:column; gap:0.6rem;">
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">Everything in Level 2</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">Board-level reporting &amp; investor decks</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">Capital structure optimization</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">ESG &amp; Carbon Accounting (GHG Protocol)</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">Sustainability-linked financing strategy</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">Dedicated CFO on-demand access</span></li>
+<li style="display:flex; align-items:flex-start; gap:0.6rem;"><svg style="flex-shrink:0; margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#001a33;">M&amp;A advisory &amp; due diligence support</span></li>
+</ul>
+<a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" rel="noopener" style="display:block; text-align:center; padding:0.82rem 1.25rem; border-radius:4px; background:linear-gradient(135deg,#334155,#475569,#334155); color:#e2e8f0; font-family:'Inter',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.07em; box-shadow:0 6px 24px rgba(0,0,0,0.2); text-decoration:none;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+Schedule a CFO Consultation →
+</a>
+</div>
+</div>
+</div>
+
+</div>
+```
+
+</div>
+</section>
+
+<!-- ══════════════════════════
+BILINGUAL
+══════════════════════════ -->
+
+<section id="bilingual" style="background:#f8fafc; padding:5rem 0;">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="reveal" style="border-radius:16px; overflow:hidden; background:linear-gradient(135deg,#001a33 0%,#012647 100%);">
+<div style="display:grid; grid-template-columns:1fr 1fr;">
+<div style="padding:3rem 3.5rem; border-right:1px solid rgba(192,200,208,0.12);">
+<p style="font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:#94a3b8; margin-bottom:0.9rem; font-weight:600;">🇨🇦 English Advisory</p>
+<h3 style="font-family:'Playfair Display',serif; font-weight:900; font-size:1.55rem; color:#ffffff; margin-bottom:0.9rem;">Bilingual Advantage<br/><em style="font-size:1.05rem; font-style:italic; color:#e2e8f0;">(English &amp; Español)</em></h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.84rem; line-height:1.75; color:#e2e8f0; font-weight:400;">Full advisory services in English for Canadian and North American businesses. We serve as your strategic bridge navigating CRA, provincial regulations, and cross-border financial strategy — with dedicated <strong style="color:#ffffff; font-weight:700;">Spanish-speaking strategic advisory</strong> available at every engagement level.</p>
+</div>
+<div style="padding:3rem 3.5rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:#94a3b8; margin-bottom:0.9rem; font-weight:600;">🇪🇸 Asesoría en Español</p>
+<h3 style="font-family:'Playfair Display',serif; font-weight:900; font-size:1.55rem; color:#ffffff; margin-bottom:0.9rem;">Ventaja Bilingüe</h3>
+<p style="font-family:'Inter',sans-serif; font-size:0.84rem; line-height:1.75; color:#e2e8f0; font-weight:400;">Ofrecemos <strong style="color:#ffffff; font-weight:700;">asesoría estratégica en español</strong> y cumplimiento fiscal en su idioma para asegurar el éxito de su negocio en Canadá. Somos el puente entre su empresa y el sistema financiero canadiense — desde contabilidad hasta planificación financiera avanzada.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ══════════════════════════
+CONTACT
+══════════════════════════ -->
+
+<section id="contact" style="background:#ffffff; padding:5rem 0;">
+<div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+<div class="reveal">
+<p style="font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.28em; text-transform:uppercase; color:#475569; margin-bottom:0.9rem; font-weight:700;">Ready to Scale?</p>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(1.9rem,4vw,2.7rem); color:#001a33; line-height:1.15; margin-bottom:1rem;">
+Let's Build Your <span style="color:#001a33; font-weight:900; -webkit-text-fill-color:#001a33; text-shadow: 0 1px 2px rgba(0,0,0,0.08);">Financial Future.</span>
+</h2>
+<p style="font-family:'Inter',sans-serif; font-size:0.9rem; line-height:1.75; color:#1e293b; max-width:460px; margin:0 auto 2.5rem; font-weight:400;">
+Book a no-obligation discovery call with Hugo Salas, Founder &amp; Principal of HAS Advisors. We'll map your financial challenges and outline the right engagement level.
+</p>
+
+```
+<div style="text-align:left; max-width:480px; margin:0 auto;">
+<form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleFormSubmit(event)">
+<input type="hidden" name="access_key" value="c83dfde8-af62-4bbc-a4ab-a8bff19772be" />
+<input type="hidden" name="subject" value="New Contact - HAS Advisors Website" />
+<input type="hidden" name="from_name" value="HAS Advisors Website" />
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+<div>
+<label style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; display:block; margin-bottom:0.4rem; font-weight:700;">First Name</label>
+<input type="text" name="first_name" placeholder="Your Name" style="width:100%; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:4px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; outline:none;" />
+</div>
+<div>
+<label style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; display:block; margin-bottom:0.4rem; font-weight:700;">Last Name</label>
+<input type="text" name="last_name" placeholder="Last Name" style="width:100%; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:4px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; outline:none;" />
+</div>
+</div>
+<div style="margin-bottom:1rem;">
+<label style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; display:block; margin-bottom:0.4rem; font-weight:700;">Company Name</label>
+<input type="text" name="company" placeholder="Your Company" style="width:100%; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:4px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; outline:none;" />
+</div>
+<div style="margin-bottom:1rem;">
+<label style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; display:block; margin-bottom:0.4rem; font-weight:700;">Business Email</label>
+<input type="email" name="email" placeholder="you@company.com" style="width:100%; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:4px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; outline:none;" />
+</div>
+<div style="margin-bottom:1rem;">
+<label style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; display:block; margin-bottom:0.4rem; font-weight:700;">Service Interest</label>
+<select name="service" style="width:100%; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:4px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; outline:none; background:#fff;">
+<option>Fractional CFO &amp; Strategic Advisory</option>
+<option>E-commerce &amp; Cloud Integration</option>
+<option>Tax &amp; Corporate Compliance</option>
+<option>ESG &amp; Carbon Accounting</option>
+<option>Innovation Funding (SR&amp;ED)</option>
+<option>Strategic CFO — Premium Level</option>
+</select>
+</div>
+<div style="margin-bottom:1.25rem;">
+<label style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#475569; display:block; margin-bottom:0.4rem; font-weight:700;">Message</label>
+<textarea rows="4" name="message" placeholder="Tell us about your business and financial goals..." style="width:100%; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:4px; font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e293b; outline:none; resize:none;"></textarea>
+</div>
+
+<!-- Submit Button — Corporate Blue, visually distinct from Calendly silver button -->
+<button type="submit" id="submit-btn" style="display:block; width:100%; padding:0.88rem 1.25rem; border-radius:4px; border:none; cursor:pointer; background:linear-gradient(135deg,#002b52 0%,#00417a 50%,#002b52 100%); color:#e8f0f8; font-family:'Inter',sans-serif; font-weight:700; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; box-shadow:0 4px 18px rgba(0,43,82,0.32); transition:opacity 0.22s, transform 0.22s, box-shadow 0.22s; margin-bottom:0.85rem;" onmouseover="this.style.opacity='0.88';this.style.transform='scale(1.012)';this.style.boxShadow='0 6px 24px rgba(0,43,82,0.42)'" onmouseout="this.style.opacity='1';this.style.transform='scale(1)';this.style.boxShadow='0 4px 18px rgba(0,43,82,0.32)'">
+Send Message
+</button>
+
+<!-- Confirmation message (hidden by default) -->
+<div id="form-confirmation" style="display:none; background:#f0f7ff; border:1.5px solid #bfdbfe; border-radius:4px; padding:0.75rem 1rem; margin-bottom:0.85rem; text-align:center;">
+<p style="font-family:'Inter',sans-serif; font-size:0.82rem; color:#1e40af; font-weight:600;">✓ Message sent! We'll be in touch within 24 hours.</p>
+</div>
+
+</form>
+
+<!-- Divider -->
+<div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.85rem;">
+<div style="flex:1; height:1px; background:#e2e8f0;"></div>
+<span style="font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#94a3b8; font-weight:600;">or book directly</span>
+<div style="flex:1; height:1px; background:#e2e8f0;"></div>
+</div>
+
+<a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" rel="noopener" class="btn-silver" style="display:block; width:100%; padding:0.9rem 1.25rem; border-radius:4px; font-size:0.85rem; text-align:center; text-decoration:none;">
+Book My Discovery Call →
+</a>
+<p style="font-family:'Inter',sans-serif; font-size:0.75rem; color:#475569; text-align:center; margin-top:0.9rem; font-weight:500;">
+Or reach us: <a href="mailto:hello@hasadvisors.com" style="color:#001a33; text-decoration:underline; font-weight:700;">hello@hasadvisors.com</a>
+</p>
+</div>
+</div>
+```
+
+</div>
+</section>
+
+<!-- ══════════════════════════
+FOOTER
+══════════════════════════ -->
+
+<footer style="background:linear-gradient(to bottom,#001a33,#011e38); border-top:1px solid rgba(192,200,208,0.07);">
+<div class="max-w-7xl mx-auto px-6 lg:px-10" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+<div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:2.5rem; margin-bottom:2.5rem;">
+
+```
+<div>
+<img src="Website_Blanco.png" alt="HAS Advisors" style="height: 104px; width: auto; object-fit: contain; display: block; margin-bottom: 2rem; background:#001a33; padding:6px 14px; border-radius:6px;"
+onerror="this.style.display='none';document.getElementById('footer-fallback').style.display='flex';" />
+<div id="footer-fallback" style="display:none; align-items:center; gap:8px; margin-bottom:1.1rem;">
+<span style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900;" class="silver-text">HAS</span>
+<span style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:#c0c8d0; font-weight:600;">Advisors</span>
+</div>
+<p style="font-family:'Inter',sans-serif; font-size:0.8rem; line-height:1.7; color:#94a3b8; max-width:300px; margin-bottom:0.75rem;">
+Empowering Canadian businesses with the financial leadership they need to scale.
+</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.72rem; color:#64748b;">Founder: Hugo Salas, CPA</p>
+</div>
+
+<div>
+<p class="footer-label" style="margin-bottom:1rem;">Services</p>
+<ul style="list-style:none; display:flex; flex-direction:column; gap:0.55rem;">
+<li><a href="#services" style="font-family:'Inter',sans-serif; font-size:0.8rem;">Fractional CFO</a></li>
+<li><a href="#services" style="font-family:'Inter',sans-serif; font-size:0.8rem;">E-commerce Integration</a></li>
+<li><a href="#services" style="font-family:'Inter',sans-serif; font-size:0.8rem;">Tax &amp; Compliance</a></li>
+<li><a href="#services" style="font-family:'Inter',sans-serif; font-size:0.8rem;">ESG Accounting</a></li>
+<li><a href="#services" style="font-family:'Inter',sans-serif; font-size:0.8rem;">SR&amp;ED Funding</a></li>
+</ul>
+</div>
+
+<div>
+<p class="footer-label" style="margin-bottom:1rem;">Connect</p>
+<ul style="list-style:none; display:flex; flex-direction:column; gap:0.55rem;">
+<li><a href="#contact" style="font-family:'Inter',sans-serif; font-size:0.8rem;">Book a Call</a></li>
+<li><a href="https://www.linkedin.com/company/has-advisors/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:0.8rem;">LinkedIn</a></li>
+<li><a href="mailto:hello@hasadvisors.com" style="font-family:'Inter',sans-serif; font-size:0.8rem;">hello@hasadvisors.com</a></li>
+</ul>
+</div>
+
+</div>
+
+<div style="border-top:1px solid rgba(192,200,208,0.07); padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
+<p style="font-family:'Inter',sans-serif; font-size:0.72rem; color:#475569; letter-spacing:0.05em;">&copy; 2026 HAS Advisors. High-level Advisory Solutions Inc. All rights reserved.</p>
+<p style="font-family:'Inter',sans-serif; font-size:0.72rem; color:#475569; letter-spacing:0.05em;">Strategic Financial Leadership for Modern Business</p>
+</div>
+```
+
+</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+async function handleFormSubmit(e) {
+e.preventDefault();
+const btn = document.getElementById('submit-btn');
+const confirmation = document.getElementById('form-confirmation');
+const form = document.getElementById('contact-form');
+
+btn.textContent = 'Sending…';
+btn.disabled = true;
+btn.style.opacity = '0.7';
+
+const formData = new FormData(form);
+const object = Object.fromEntries(formData);
+const json = JSON.stringify(object);
+
+try {
+const response = await fetch('https://api.web3forms.com/submit', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+body: json
+});
+const result = await response.json();
+if (result.success) {
+form.reset();
+confirmation.style.display = 'block';
+confirmation.innerHTML = '<p style="font-family:\'Inter\', sans-serif; font-size:0.82rem; color:#1e40af; font-weight:600;">✓ Message sent! We\'ll be in touch within 24 hours.</p>';
+setTimeout(() => { confirmation.style.display = 'none'; }, 6000);
+} else {
+confirmation.style.display = 'block';
+confirmation.style.background = '#fff0f0';
+confirmation.style.borderColor = '#fca5a5';
+confirmation.innerHTML = '<p style="font-family:\'Inter\', sans-serif; font-size:0.82rem; color:#b91c1c; font-weight:600;">Something went wrong. Please email us directly at hello@hasadvisors.com</p>';
+setTimeout(() => { confirmation.style.display = 'none'; confirmation.style.background=''; confirmation.style.borderColor=''; }, 6000);
+}
+} catch (err) {
+confirmation.style.display = 'block';
+confirmation.style.background = '#fff0f0';
+confirmation.style.borderColor = '#fca5a5';
+confirmation.innerHTML = '<p style="font-family:\'Inter\', sans-serif; font-size:0.82rem; color:#b91c1c; font-weight:600;">Connection error. Please try again or email hello@hasadvisors.com</p>';
+setTimeout(() => { confirmation.style.display = 'none'; confirmation.style.background=''; confirmation.style.borderColor=''; }, 6000);
+} finally {
+btn.textContent = 'Send Message';
+btn.disabled = false;
+btn.style.opacity = '1';
+}
+}
+
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+menuBtn.addEventListener('click', () => {
+if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+mobileMenu.style.display = 'flex';
+} else {
+mobileMenu.style.display = 'none';
+}
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+a.addEventListener('click', () => {
+mobileMenu.style.display = 'none';
+});
+});
+}
+</script>
+
+</body>
+</html>
 
 <html lang="en">
 <head>
