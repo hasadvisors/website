@@ -9,7 +9,15 @@
   <meta property="og:description" content="Empowering Canadian businesses with the financial leadership they need to scale." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./img/Website_Azul.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+  // Fallback: ensure all reveal elements become visible
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 100);
+
+</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -106,6 +114,117 @@
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #050d18; }
     ::-webkit-scrollbar-thumb { background: #002040; border-radius: 3px; }
+#menu-btn { display: none; }
+
+    /* ══════════════════════════
+MOBILE RESPONSIVE
+══════════════════════════ */
+@media (max-width: 768px) {
+
+/* NAVBAR */
+header > div { height: 72px !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+header img { height: 72px !important; }
+header nav { display: none !important; }
+header > div > a.btn-silver { display: none !important; }
+#menu-btn { display: flex !important; }
+
+/* MOBILE MENU */
+#mobile-menu {
+position: fixed; top: 72px; left: 0; right: 0; z-index: 49;
+background: #ffffff; border-bottom: 1px solid #e2e8f0;
+flex-direction: column; padding: 1.25rem 1.5rem; gap: 1rem;
+box-shadow: 0 8px 24px rgba(0,26,51,0.10);
+}
+#mobile-menu a {
+font-family: 'Inter', sans-serif; font-size: 0.85rem;
+letter-spacing: 0.12em; text-transform: uppercase;
+font-weight: 600; color: #001a33; text-decoration: none;
+padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9;
+}
+#mobile-menu .btn-silver {
+display: block !important; text-align: center;
+padding: 0.75rem 1rem; border-radius: 4px; margin-top: 0.5rem;
+border-bottom: none !important;
+}
+
+/* HERO */
+section.hero-bg { padding-top: 72px !important; min-height: 100svh !important; }
+section.hero-bg > div { padding-top: 2rem !important; padding-bottom: 2.5rem !important; padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+section.hero-bg > div > div { max-width: 100% !important; }
+
+/* HERO STATS */
+div[style*="grid-template-columns:repeat(3,1fr)"][style*="border-top"] {
+grid-template-columns: repeat(3, 1fr) !important;
+gap: 1rem !important;
+}
+.stat-number { font-size: 2rem !important; }
+
+/* TRUST BAR */
+#trust-bar div[style*="display:flex"][style*="flex-wrap:wrap"] {
+gap: 1.5rem !important;
+}
+#trust-bar div[style*="width:1px"] { display: none !important; }
+
+/* SERVICES */
+#services { padding: 3rem 0 !important; }
+#services > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+div[style*="grid-template-columns:repeat(3,1fr)"][style*="gap:1.25rem"] {
+grid-template-columns: 1fr !important;
+}
+div[style*="grid-template-columns:repeat(2,minmax(0,1fr))"] {
+grid-template-columns: 1fr !important;
+max-width: 100% !important;
+}
+
+/* TIERS */
+#tiers { padding: 3rem 0 !important; }
+#tiers > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+#tiers > div > div[style*="grid-template-columns:repeat(3,1fr)"] {
+grid-template-columns: 1fr !important;
+}
+#tiers div[style*="padding-top:1.8rem"] { padding-top: 2.5rem !important; }
+
+/* BILINGUAL */
+#bilingual { padding: 3rem 0 !important; }
+#bilingual > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+#bilingual div[style*="grid-template-columns:1fr 1fr"] {
+grid-template-columns: 1fr !important;
+}
+#bilingual div[style*="border-right"] {
+border-right: none !important;
+border-bottom: 1px solid rgba(192,200,208,0.12) !important;
+padding: 2rem 1.5rem !important;
+}
+#bilingual div[style*="padding:3rem 3.5rem"]:last-child {
+padding: 2rem 1.5rem !important;
+}
+
+/* CONTACT */
+#contact { padding: 3rem 0 !important; }
+#contact > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+#contact div[style*="max-width:480px"] { max-width: 100% !important; }
+#contact div[style*="grid-template-columns:1fr 1fr"] {
+grid-template-columns: 1fr !important;
+}
+
+/* FOOTER */
+footer > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+footer div[style*="grid-template-columns:2fr 1fr 1fr"] {
+grid-template-columns: 1fr !important;
+gap: 2rem !important;
+}
+footer div[style*="justify-content:space-between"] {
+flex-direction: column !important;
+align-items: flex-start !important;
+gap: 0.5rem !important;
+}
+}
+
+@media (max-width: 480px) {
+h1 { font-size: clamp(2.2rem, 8vw, 3rem) !important; }
+}
+
+
   </style>
 </head>
 <body>
@@ -137,7 +256,7 @@
       Book a Discovery Call
     </a>
 
-    <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Open menu" style="color:#001a33; display:none;">
+    <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Open menu" style="color:#001a33;">
       <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
@@ -145,6 +264,15 @@
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+
+<div id="mobile-menu" style="display:none; position:fixed; top:72px; left:0; right:0; z-index:49; background:#ffffff; border-bottom:1px solid #e2e8f0; flex-direction:column; padding:1.25rem 1.5rem; gap:1rem; box-shadow:0 8px 24px rgba(0,26,51,0.10);">
+<a href="#services">Services</a>
+<a href="#tiers">Plans</a>
+<a href="#bilingual">Bilingual</a>
+<a href="#contact">Contact</a>
+<a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" rel="noopener" class="btn-silver">Book a Discovery Call</a>
+</div>
 
 <!-- ══════════════════════════
      HERO
@@ -613,19 +741,15 @@
   }
 
   const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('flex');
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('flex');
-      });
-    });
-  }
+const mobileMenu = document.getElementById('mobile-menu');
+if (menuBtn && mobileMenu) {
+menuBtn.addEventListener('click', () => {
+if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+mobileMenu.style.display = 'flex';
+} else {
+mobileMenu.style.display = 'none';
+}
+}
 </script>
 
 </body>
