@@ -14,12 +14,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #fff; color: #1e293b; -webkit-font-smoothing: antialiased; }
 
-    /* FIX: Header opacity and shadow to prevent background bleeding */
-    #navbar {
-      background: #ffffff !important;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+    #navbar { background: #ffffff !important; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 
     .hero-bg {
       background: radial-gradient(ellipse 78% 68% at 50% 44%, #1b3a5c 0%, #0b1726 55%, #050d18 100%);
@@ -32,15 +27,12 @@
       pointer-events: none;
     }
 
-    /* Animaciones */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
     .anim-1 { animation: fadeUp 0.8s ease both; }
     .anim-2 { animation: fadeUp 0.8s 0.1s ease both; }
     .anim-3 { animation: fadeUp 0.8s 0.22s ease both; }
     .anim-4 { animation: fadeUp 0.8s 0.34s ease both; }
+    
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
@@ -49,33 +41,21 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    /* Botones y Cards */
     .btn-silver {
       background: linear-gradient(135deg, #bec6ce 0%, #e8ecf0 48%, #bec6ce 100%);
       color: #001a33; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em;
-      transition: all 0.22s; cursor: pointer; border-radius: 4px;
+      transition: all 0.22s; cursor: pointer; border-radius: 4px; text-align: center;
     }
     .btn-silver:hover { opacity: 0.9; transform: translateY(-1px); }
 
     .tier-card { border: 1px solid #e0e5ea; transition: all 0.28s; background: #ffffff; }
     .tier-card:hover { transform: translateY(-5px); box-shadow: 0 16px 52px rgba(0,26,51,0.12); }
 
-    #menu-btn { display: none; }
-
-    /* Footer fix alignment */
-    footer div[style*="grid-template-columns"] {
-      text-align: left;
-    }
+    .service-icon { background: #f8fafc; border-radius: 8px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
 
     @media (max-width: 1024px) {
       header nav, header .btn-silver { display: none !important; }
       #menu-btn { display: flex !important; }
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
-      header > div { height: 80px !important; }
-      section.hero-bg { padding-top: 80px !important; }
     }
   </style>
 </head>
@@ -83,28 +63,18 @@
 
 <header id="navbar" class="fixed top-0 left-0 right-0">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between" style="height:100px;">
-    
     <a href="#" class="flex items-center">
       <img src="Website_Azul.png" alt="HAS Advisors" style="height:70px; width:auto;" />
     </a>
-
     <nav class="hidden lg:flex items-center gap-8">
       <a href="#services" class="text-[0.7rem] uppercase font-bold tracking-widest text-[#001a33] hover:opacity-60 transition-opacity">Services</a>
+      <a href="#pillars" class="text-[0.7rem] uppercase font-bold tracking-widest text-[#001a33] hover:opacity-60 transition-opacity">Methodology</a>
       <a href="#tiers" class="text-[0.7rem] uppercase font-bold tracking-widest text-[#001a33] hover:opacity-60 transition-opacity">Plans</a>
-      <a href="#bilingual" class="text-[0.7rem] uppercase font-bold tracking-widest text-[#001a33] hover:opacity-60 transition-opacity">Bilingual</a>
       <a href="#contact" class="text-[0.7rem] uppercase font-bold tracking-widest text-[#001a33] hover:opacity-60 transition-opacity">Contact</a>
     </nav>
-
-    <a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" class="btn-silver px-6 py-3 hidden lg:block">
-      BOOK A CALL
-    </a>
-
-    <button id="menu-btn" class="p-2">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2" stroke-linecap="round">
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-      </svg>
+    <a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" class="btn-silver px-6 py-3 hidden lg:block">BOOK A CALL</a>
+    <button id="menu-btn" class="p-2 hidden">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#001a33" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
     </button>
   </div>
 </header>
@@ -112,8 +82,8 @@
 <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col p-10 gap-6 transition-transform translate-x-full lg:hidden">
   <button id="close-menu" class="self-end text-2xl">✕</button>
   <a href="#services" class="text-xl font-bold text-[#001a33]">Services</a>
+  <a href="#pillars" class="text-xl font-bold text-[#001a33]">Methodology</a>
   <a href="#tiers" class="text-xl font-bold text-[#001a33]">Plans</a>
-  <a href="#bilingual" class="text-xl font-bold text-[#001a33]">Bilingual</a>
   <a href="#contact" class="text-xl font-bold text-[#001a33]">Contact</a>
   <a href="https://calendly.com/hugosalas-hasadvisors/30min" class="btn-silver py-4 text-center">BOOK A CALL</a>
 </div>
@@ -136,10 +106,121 @@
   </div>
 </section>
 
+<section id="services" class="py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-20 items-start">
+      <div class="reveal">
+        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#001a33] mb-8">Comprehensive Solutions for Modern Founders.</h2>
+        <p class="text-lg text-slate-600 mb-12 leading-relaxed">We integrate high-level strategy with automated execution to give you back your most valuable asset: time.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="reveal">
+          <div class="service-icon"><svg width="24" height="24" fill="none" stroke="#1b3a5c" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+          <h3 class="font-bold text-[#001a33] mb-3">Fractional CFO</h3>
+          <p class="text-sm text-slate-500">Board-level advisory, cash flow forecasting, and capital structure optimization.</p>
+        </div>
+        <div class="reveal">
+          <div class="service-icon"><svg width="24" height="24" fill="none" stroke="#1b3a5c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></div>
+          <h3 class="font-bold text-[#001a33] mb-3">Tech Integrations</h3>
+          <p class="text-sm text-slate-500">Seamless automation with Xero, QuickBooks, and AI-driven reporting tools.</p>
+        </div>
+        <div class="reveal">
+          <div class="service-icon"><svg width="24" height="24" fill="none" stroke="#1b3a5c" stroke-width="2"><path d="M20 7h-7l-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg></div>
+          <h3 class="font-bold text-[#001a33] mb-3">Tax & Compliance</h3>
+          <p class="text-sm text-slate-500">Corporate tax filings, SR&ED claims, and CRA representation with precision.</p>
+        </div>
+        <div class="reveal">
+          <div class="service-icon"><svg width="24" height="24" fill="none" stroke="#1b3a5c" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <h3 class="font-bold text-[#001a33] mb-3">ESG Advisory</h3>
+          <p class="text-sm text-slate-500">Carbon accounting and GHG protocol alignment for sustainable growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pillars" class="py-32 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+      <h2 class="font-serif text-4xl font-bold text-[#001a33] mb-6">The HAS Advisors Methodology</h2>
+      <p class="text-slate-600">Our five-pillar framework ensures your financial foundation is scalable and audit-ready.</p>
+    </div>
+    <div class="grid md:grid-cols-5 gap-4">
+      <div class="p-8 bg-white border border-slate-200 reveal">
+        <span class="text-3xl font-serif text-slate-200 mb-6 block">01</span>
+        <h4 class="font-bold text-[#001a33] mb-2">Structure</h4>
+        <p class="text-xs text-slate-500 italic">Core setup and tax optimization.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-200 reveal">
+        <span class="text-3xl font-serif text-slate-200 mb-6 block">02</span>
+        <h4 class="font-bold text-[#001a33] mb-2">Systems</h4>
+        <p class="text-xs text-slate-500 italic">ERP and AI automation.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-200 reveal">
+        <span class="text-3xl font-serif text-slate-200 mb-6 block">03</span>
+        <h4 class="font-bold text-[#001a33] mb-2">Strategy</h4>
+        <p class="text-xs text-slate-500 italic">Fractional CFO leadership.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-200 reveal">
+        <span class="text-3xl font-serif text-slate-200 mb-6 block">04</span>
+        <h4 class="font-bold text-[#001a33] mb-2">Scale</h4>
+        <p class="text-xs text-slate-500 italic">Reporting and growth KPIs.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-200 reveal">
+        <span class="text-3xl font-serif text-slate-200 mb-6 block">05</span>
+        <h4 class="font-bold text-[#001a33] mb-2">Security</h4>
+        <p class="text-xs text-slate-500 italic">Compliance and ESG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tiers" class="py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20 reveal">
+      <h2 class="font-serif text-4xl font-bold text-[#001a33] mb-4">Investment Levels</h2>
+      <p class="text-slate-600">Select the partnership tier that fits your current revenue and complexity.</p>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="tier-card p-10 flex flex-col reveal">
+        <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4">Foundation</h3>
+        <p class="text-3xl font-serif font-bold text-[#001a33] mb-8">The Core</p>
+        <ul class="space-y-4 mb-12 text-sm text-slate-600 flex-grow">
+          <li class="flex items-center gap-3">✓ Cloud Accounting Setup</li>
+          <li class="flex items-center gap-3">✓ Monthly Compliance</li>
+          <li class="flex items-center gap-3">✓ Quarterly Review</li>
+        </ul>
+        <a href="https://calendly.com/hugosalas-hasadvisors/30min" class="btn-silver py-4 w-full">GET STARTED</a>
+      </div>
+      <div class="tier-card p-10 flex flex-col border-[#001a33] scale-105 shadow-xl z-10 reveal">
+        <h3 class="text-xs font-bold tracking-widest text-[#1b3a5c] uppercase mb-4">Growth (Popular)</h3>
+        <p class="text-3xl font-serif font-bold text-[#001a33] mb-8">Strategic CFO</p>
+        <ul class="space-y-4 mb-12 text-sm text-slate-600 flex-grow">
+          <li class="flex items-center gap-3">✓ All Foundation Features</li>
+          <li class="flex items-center gap-3">✓ Monthly CFO Advisory</li>
+          <li class="flex items-center gap-3">✓ Cash Flow Forecasting</li>
+          <li class="flex items-center gap-3">✓ Advanced ERP Integration</li>
+        </ul>
+        <a href="https://calendly.com/hugosalas-hasadvisors/30min" class="btn-silver py-4 w-full">SELECT GROWTH</a>
+      </div>
+      <div class="tier-card p-10 flex flex-col reveal">
+        <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4">Enterprise</h3>
+        <p class="text-3xl font-serif font-bold text-[#001a33] mb-8">Elite Partner</p>
+        <ul class="space-y-4 mb-12 text-sm text-slate-600 flex-grow">
+          <li class="flex items-center gap-3">✓ All Growth Features</li>
+          <li class="flex items-center gap-3">✓ ESG & Carbon Accounting</li>
+          <li class="flex items-center gap-3">✓ M&A Support</li>
+          <li class="flex items-center gap-3">✓ Priority Support</li>
+        </ul>
+        <a href="https://calendly.com/hugosalas-hasadvisors/30min" class="btn-silver py-4 w-full">TALK TO HUGO</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="bg-[#001a33] text-white pt-20 pb-10 border-t border-white/5">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="footer-grid grid grid-cols-[1.5fr_1fr_1fr] gap-12 mb-16">
-      
+    <div class="footer-grid grid lg:grid-cols-[1.5fr_1fr_1fr] gap-12 mb-16">
       <div class="flex flex-col items-start">
         <img src="Website_Blanco.png" alt="HAS Advisors" style="height: 80px; width: auto;" class="mb-6"/>
         <p class="text-[#94a3b8] text-sm leading-relaxed max-w-xs mb-4">
@@ -147,7 +228,6 @@
         </p>
         <p class="text-xs text-[#64748b]">Founder: Hugo Salas, CPA</p>
       </div>
-
       <div>
         <h4 class="text-[0.65rem] uppercase tracking-widest font-bold text-[#c0c8d0] mb-6">Services</h4>
         <ul class="flex flex-col gap-3 text-sm text-[#94a3b8]">
@@ -157,17 +237,15 @@
           <li><a href="#services" class="hover:text-white transition-colors">ESG Accounting</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="text-[0.65rem] uppercase tracking-widest font-bold text-[#c0c8d0] mb-6">Connect</h4>
         <ul class="flex flex-col gap-3 text-sm text-[#94a3b8]">
           <li><a href="https://www.linkedin.com/company/has-advisors/" target="_blank" class="hover:text-white transition-colors">LinkedIn</a></li>
           <li><a href="mailto:hello@hasadvisors.com" class="hover:text-white transition-colors">Email Us</a></li>
-          <li><a href="#contact" class="hover:text-white transition-colors">Book a Call</a></li>
+          <li><a href="https://calendly.com/hugosalas-hasadvisors/30min" target="_blank" class="hover:text-white transition-colors">Book a Call</a></li>
         </ul>
       </div>
     </div>
-
     <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.7rem] text-[#475569]">
       <p>&copy; 2026 HAS Advisors. High-level Advisory Solutions Inc. All rights reserved.</p>
       <p class="uppercase tracking-widest">Strategic Financial Leadership</p>
@@ -176,7 +254,6 @@
 </footer>
 
 <script>
-  // Mobile Menu Logic
   const menuBtn = document.getElementById('menu-btn');
   const closeMenu = document.getElementById('close-menu');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -187,7 +264,6 @@
     link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
   });
 
-  // Reveal Animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
