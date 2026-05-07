@@ -9,15 +9,7 @@
   <meta property="og:description" content="Empowering Canadian businesses with the financial leadership they need to scale." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./img/Website_Azul.png" />
-  <script src="https://cdn.tailwindcss.com">
-  // Fallback: ensure all reveal elements become visible
-  setTimeout(() => {
-    document.querySelectorAll('.reveal').forEach(el => {
-      el.classList.add('visible');
-    });
-  }, 100);
-
-</script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -114,7 +106,8 @@
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #050d18; }
     ::-webkit-scrollbar-thumb { background: #002040; border-radius: 3px; }
-#menu-btn { display: none; }
+
+    #menu-btn { display: none; }
 
     /* ══════════════════════════
 MOBILE RESPONSIVE
@@ -222,9 +215,6 @@ gap: 0.5rem !important;
 
 @media (max-width: 480px) {
 h1 { font-size: clamp(2.2rem, 8vw, 3rem) !important; }
-}
-
-
   </style>
 </head>
 <body>
@@ -749,6 +739,12 @@ mobileMenu.style.display = 'flex';
 } else {
 mobileMenu.style.display = 'none';
 }
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+a.addEventListener('click', () => {
+mobileMenu.style.display = 'none';
+});
+});
 }
 </script>
 
